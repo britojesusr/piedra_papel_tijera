@@ -7,40 +7,50 @@ var opcPlayer;
 var numRandom;
 var min = 1;
 var max = 3; 
+
 // Funcion que toma la opcion del jugador y la coloca en modo batalla
-
-
-
-function choicePlayer(seleccion){
-    var seleccion = seleccion;
-    console.log(seleccion);
-    var seleccionJugador = document.getElementById('seleccionJugador');
-    console.log(seleccionJugador);
+  
     
+// Funcion para traer la opcion seleccionada por el jugador
 
-    if(seleccion==opc1) {
+        function choicePlayer(seleccion)
+            {
+            choicePlayerReady(seleccion);
+        }
+
+
+function choicePlayerReady(seleccion) {    
+
+    var comp = seleccion;
+
+    var seleccionJugador = document.getElementById('seleccionJugador');
+    console.log(seleccionJugador);    
+
+    if(comp===opc1) {
         seleccionJugador.setAttribute("src", "/archivos/piedra.png");
         seleccionJugador.removeAttribute("class", "hidden");
-        seleccionJugador.setAttribute("class", "show");
-        
+        seleccionJugador.setAttribute("class", "show");            
     }
-    else if(seleccion==opc2) {
+
+    else if(comp===opc2) {
         seleccionJugador.setAttribute("src", "/archivos/papel.png");
         seleccionJugador.removeAttribute("class", "hidden");
-        seleccionJugador.setAttribute("class", "show");
-        
+        seleccionJugador.setAttribute("class", "show");            
     }
-    else if (seleccion==opc3) {
+
+    else if (comp===opc3) {
         seleccionJugador.setAttribute("src", "/archivos/tijera.png");
         seleccionJugador.removeAttribute("class", "hidden");
         seleccionJugador.setAttribute("class", "show");
-        
     }
+
     else {
         alert("Debe seleccionar una opcion de ataque");
     }
-         
+     
 }
+
+
 
 // Funcion que toma la opcion de la PC y la coloca en modo batalla
 
@@ -67,17 +77,6 @@ function choicePc(numRandom){
         alert("Está prohibido hacer trampa ¬¬!");
     }
 }
-
-function startBattle(){
-    
-    var numRandom = Math.floor(Math.random()*(max - min + 1)) + min;
-    console.log(min, max);
-    console.log(numRandom);    
-
-    choicePc(numRandom); // function choicePc   
-}
-
-
 
 
 /*
@@ -132,3 +131,37 @@ function piedraPapelTijera() {
 
 piedraPapelTijera();
 */
+
+
+
+
+
+function startBattle(){
+    
+    var numRandom = Math.floor(Math.random()*(max - min + 1)) + min;
+    console.log(min, max);
+    console.log(numRandom);    
+
+    choicePc(numRandom); // function choicePc 
+    choicePlayerReady(eleccion);
+    
+    console.log("El jugador ataca con : " +seleccion);
+    console.log("La pc ataca con : " +numRandom);
+    
+
+
+
+
+    
+    
+
+
+}
+
+
+
+
+
+
+
+
