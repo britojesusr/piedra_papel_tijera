@@ -3,33 +3,79 @@ var opc2 = "papel";
 var opc3 = "tijera";
 var opcPlayer;
 
+// Rango de valores para la pc (1, 2, 3) (piedra, papel, tijera)
+var numRandom;
+var min = 1;
+var max = 3; 
+// Funcion que toma la opcion del jugador y la coloca en modo batalla
+
+
+
 function choicePlayer(seleccion){
     var seleccion = seleccion;
     console.log(seleccion);
     var seleccionJugador = document.getElementById('seleccionJugador');
+    console.log(seleccionJugador);
+    
 
     if(seleccion==opc1) {
         seleccionJugador.setAttribute("src", "/archivos/piedra.png");
+        seleccionJugador.removeAttribute("class", "hidden");
+        seleccionJugador.setAttribute("class", "show");
         
     }
     else if(seleccion==opc2) {
         seleccionJugador.setAttribute("src", "/archivos/papel.png");
+        seleccionJugador.removeAttribute("class", "hidden");
+        seleccionJugador.setAttribute("class", "show");
+        
+    }
+    else if (seleccion==opc3) {
+        seleccionJugador.setAttribute("src", "/archivos/tijera.png");
+        seleccionJugador.removeAttribute("class", "hidden");
+        seleccionJugador.setAttribute("class", "show");
         
     }
     else {
-        seleccionJugador.setAttribute("src", "/archivos/tijera.png");
-        
+        alert("Debe seleccionar una opcion de ataque");
     }
-    
-}
-    
-
-
-function startBattle() {
-    
-
+         
 }
 
+// Funcion que toma la opcion de la PC y la coloca en modo batalla
+
+function choicePc(numRandom){
+    var seleccionPc = document.getElementById('seleccionPc');
+    console.log(seleccionPc);
+
+    if (numRandom==1) {
+        seleccionPc.setAttribute("src", "/archivos/piedra.png");
+        seleccionPc.removeAttribute("class", "hidden");
+        seleccionPc.setAttribute("class", "show");
+    }
+    else if (numRandom==2) {
+        seleccionPc.setAttribute("src", "/archivos/papel.png");
+        seleccionPc.removeAttribute("class", "hidden");
+        seleccionPc.setAttribute("class", "show");
+    }
+    else if (numRandom==3) {
+        seleccionPc.setAttribute("src", "/archivos/tijera.png");
+        seleccionPc.removeAttribute("class", "hidden");
+        seleccionPc.setAttribute("class", "show");
+    }
+    else {
+        alert("Está prohibido hacer trampa ¬¬!");
+    }
+}
+
+function startBattle(){
+    
+    var numRandom = Math.floor(Math.random()*(max - min + 1)) + min;
+    console.log(min, max);
+    console.log(numRandom);    
+
+    choicePc(numRandom); // function choicePc   
+}
 
 
 
