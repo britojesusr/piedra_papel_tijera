@@ -27,19 +27,19 @@ function choicePlayerReady(seleccion) {
     console.log(seleccionJugador);    
 
     if(comp===opc1) {
-        seleccionJugador.setAttribute("src", "/archivos/piedra.png");
+        seleccionJugador.setAttribute("src", "https://i.ibb.co/p2FKT1B/piedra.png");
         seleccionJugador.removeAttribute("class", "hidden");
         seleccionJugador.setAttribute("class", "show");            
     }
 
     else if(comp===opc2) {
-        seleccionJugador.setAttribute("src", "/archivos/papel.png");
+        seleccionJugador.setAttribute("src", "https://i.ibb.co/2ggW1FD/papel.png");
         seleccionJugador.removeAttribute("class", "hidden");
         seleccionJugador.setAttribute("class", "show");            
     }
 
     else if (comp===opc3) {
-        seleccionJugador.setAttribute("src", "/archivos/tijera.png");
+        seleccionJugador.setAttribute("src", "https://i.ibb.co/qMkqkJn/tijera.png");
         seleccionJugador.removeAttribute("class", "hidden");
         seleccionJugador.setAttribute("class", "show");
     }
@@ -59,17 +59,17 @@ function choicePc(numRandom){
     console.log(seleccionPc);
 
     if (numRandom==1) {
-        seleccionPc.setAttribute("src", "/archivos/piedra.png");
+        seleccionPc.setAttribute("src", "https://i.ibb.co/p2FKT1B/piedra.png");
         seleccionPc.removeAttribute("class", "hidden");
         seleccionPc.setAttribute("class", "show");
     }
     else if (numRandom==2) {
-        seleccionPc.setAttribute("src", "/archivos/papel.png");
+        seleccionPc.setAttribute("src", "https://i.ibb.co/2ggW1FD/papel.png");
         seleccionPc.removeAttribute("class", "hidden");
         seleccionPc.setAttribute("class", "show");
     }
     else if (numRandom==3) {
-        seleccionPc.setAttribute("src", "/archivos/tijera.png");
+        seleccionPc.setAttribute("src", "https://i.ibb.co/qMkqkJn/tijera.png");
         seleccionPc.removeAttribute("class", "hidden");
         seleccionPc.setAttribute("class", "show");
     }
