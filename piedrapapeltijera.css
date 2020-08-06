@@ -59,6 +59,7 @@ main{
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    border: 2px solid #555;
     margin: 0 auto;
 }
 
@@ -66,6 +67,7 @@ main{
     width: 100px;
     height: 100px;
     border-radius: 50%;
+    border: 2px solid #555;
     margin: 0 auto;
 }
 
@@ -77,11 +79,26 @@ main{
     justify-content: space-evenly;
     padding: 20px;
 }
+.opciones .opcionJugador:hover{    
+    opacity: 0.7;
+    
+}
+
+.opciones .opcionJugador:active{    
+    transform: scale(0.9);
+}
+
+
 
 .opcionJugador {
     width: 100px;
     height: auto;
+    
 }
+
+
+
+
 .opcionPc {
     width: 100px;
     height: auto;

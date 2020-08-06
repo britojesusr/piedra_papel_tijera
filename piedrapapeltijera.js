@@ -1,16 +1,34 @@
-function selectPiedra(){
-    document.getElementById('piedra').style.display='none';
-    
-}
-function selectPapel(){
-    document.getElementById('papel').style.display='none';
-    
-}
-function selectTijera(){
-    document.getElementById('tijera').style.display='none';
-    
-}
+var opc1 = "piedra";
+var opc2 = "papel";
+var opc3 = "tijera";
+var opcPlayer;
 
+function choicePlayer(seleccion){
+    var seleccion = seleccion;
+    console.log(seleccion);
+    var seleccionJugador = document.getElementById('seleccionJugador');
+
+    if(seleccion==opc1) {
+        seleccionJugador.setAttribute("src", "/archivos/piedra.png");
+        
+    }
+    else if(seleccion==opc2) {
+        seleccionJugador.setAttribute("src", "/archivos/papel.png");
+        
+    }
+    else {
+        seleccionJugador.setAttribute("src", "/archivos/tijera.png");
+        
+    }
+    
+}
+    
+
+
+function startBattle() {
+    
+
+}
 
 
 
