@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juega a Piedra Papel o tijera :)</title>
+    <link rel="stylesheet" href="piedrapapeltijera.css" >
+    <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
+
+    <script type="text/javascript" src="piedrapapeltijera.js" ></script>
+</head>
+<body>
+    <header>
+        <h1>Rock Paper and Scissors</h1>
+    </header>
+
+    <main class="main">
+        <section class="pizarraJugador">
+            <img class="iconoUsuario" src="/archivos/usuario.jpg"></img>
+
+        </section>
+        <section class="pizarraPc">
+            <img class="iconoPc" src="/archivos/iconoJs.png"></img>                        
+        </section>
+        <section class="opciones">
+            <img id="piedra" class="opcionJugador" src="archivos/piedra.png" onclick="selectPiedra();"></img>
+            <img id="papel" class="opcionJugador" src="archivos/papel.png" onclick="selectPapel();"></img>
+            <img id="tijera" class="opcionJugador" src="archivos/tijera.png" onclick="selectTijera();"></img>
+
+        </section>
+        <section class="seleccionJugador">
+            <h2 class="choice">Your choice</h2>
+            <img id="seleccionJugador" class="opcionJugador" src="/archivos/tijera.png" ></img>
+
+        </section>
+        <section class="battle">
+            <span class="battleSpan">Battle</span>
+            <button id="battleButton" value="battleButton">Battle</button>
+            
+        </section>
+        <section class="seleccionPc">
+            <h2 class="choice">Choice of PC</h2>
+            <img id="seleccionJugador" class="opcionPc" src="/archivos/tijera.png" ></img> 
+        </section>
+    </main>
+
+    <footer class="footer">
+
+    </footer>  
+
+</body>
+</html>
