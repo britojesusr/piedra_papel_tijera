@@ -8,16 +8,16 @@ var numRandom;
 var min = 1;
 var max = 3; 
 
-// Funcion que toma la opcion del jugador y la coloca en modo batalla
-  
     
-// Funcion para traer la opcion seleccionada por el jugador
+// Funcion para traer la opcion seleccionada por el jugador desde html
 
         function choicePlayer(seleccion)
             {
+            var seleccion = seleccion;    
             choicePlayerReady(seleccion);
         }
 
+// Funcion que toma la opcion del jugador y la coloca en modo batalla
 
 function choicePlayerReady(seleccion) {    
 
@@ -79,10 +79,13 @@ function choicePc(numRandom){
 }
 
 
-/*
+//  Funcion  piedra papel o tijera batalla entre jugador y pc  
 
-function piedraPapelTijera() {
+function piedraPapelTijera(parametro1, parametro2) { // debo pasar parametros reales.. 
  
+    var opcionUsuario = parametro1;
+    var opcionPC      = parametro2;
+
     if (opcionUsuario == opcionPC) {
 
         console.log("La opcion de ambos es: "+ opcionPC + " se ha producido un empate");
@@ -129,12 +132,10 @@ function piedraPapelTijera() {
 
 }
 
-piedraPapelTijera();
-*/
 
 
 
-
+//Funcion iniciar batalla - Se activa con el Boton battle del HTML y llama a piedraPapelTijera();
 
 function startBattle(){
     
@@ -143,17 +144,12 @@ function startBattle(){
     console.log(numRandom);    
 
     choicePc(numRandom); // function choicePc 
-    choicePlayerReady(eleccion);
-    
+       
     console.log("El jugador ataca con : " +seleccion);
     console.log("La pc ataca con : " +numRandom);
-    
 
 
-
-
-    
-    
+    piedraPapelTijera(numRandom);     
 
 
 }
