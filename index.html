@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Juega a Piedra Papel o tijera :)</title>
-    <link rel="stylesheet" href="piedrapapeltijera.css" >
-    <link rel="stylesheet" href="https://i.icomoon.io/public/temp/731acaf103/responsivedesign/style.css">
+    <title>Play Rock Paper Scissors</title>
+    <link rel="stylesheet" href="piedrapapeltijera.css">
     <link href="https://fonts.googleapis.com/css2?family=Concert+One&display=swap" rel="stylesheet">
 
     <script type="text/javascript" src="piedrapapeltijera.js" ></script>
@@ -16,21 +15,29 @@
     </header>
 
     <main class="main">
-        <section class="pizarraJugador">
-            <img class="iconoUsuario" src="https://i.ibb.co/72Nrx9x/persona.png" draggable="false">
+        <section class="pizarraPlayer">
+            <h2>Player</h2>
+            <img class="iconoPlayer" src="https://i.ibb.co/72Nrx9x/persona.png" draggable="false">
+            <h2>Score:</h2>
+            <span id="scorePlayer" class="score">0</span>
 
         </section>
         <section class="pizarraPc">
-            <img class="iconoPc" src="https://i.ibb.co/dDZwjbh/iconoJs.png" draggable="false">                     
+            <h2>Code JS</h2>
+            <img class="iconoPc" src="https://i.ibb.co/dDZwjbh/iconoJs.png" draggable="false">
+            <h2>Score:</h2>
+            <span id="scorePc" class="score">0</span>                     
         </section>
-        <section class="opciones">
-            <img id="piedra" class="opcionJugador" src="https://i.ibb.co/p2FKT1B/piedra.png" draggable="false" onclick="choicePlayer(1);">
-            <img id="papel" class="opcionJugador" src="https://i.ibb.co/2ggW1FD/papel.png" draggable="false" onclick="choicePlayer(2);">
-            <img id="tijera" class="opcionJugador" src="https://i.ibb.co/qMkqkJn/tijera.png" draggable="false" onclick="choicePlayer(3);">
+
+
+        <section class="options">
+            <img id="piedra" class="optionPlayer" src="https://i.ibb.co/p2FKT1B/piedra.png" draggable="false" onclick="choicePlayer(1);">
+            <img id="papel" class="optionPlayer" src="https://i.ibb.co/2ggW1FD/papel.png" draggable="false" onclick="choicePlayer(2);">
+            <img id="tijera" class="optionPlayer" src="https://i.ibb.co/qMkqkJn/tijera.png" draggable="false" onclick="choicePlayer(3);">
         </section>
-        <section class="seleccionJugador">
+        <section class="selectionPlayer">
             <h2 class="choice">Your choice</h2>
-            <img id="seleccionJugador" class="hidden" src="" alt="choice" draggable="false" >
+            <img id="selectionPlayer" class="hidden" src="" alt="choice" draggable="false" >
 
         </section>
         <section class="battle">
@@ -43,9 +50,9 @@
             </div>
 
         </section>
-        <section class="seleccionPc">
+        <section class="selectionPc">
             <h2 class="choice">Choice of PC</h2>
-            <img id="seleccionPc" class="opcionPc hidden" src="" > 
+            <img id="selectionPc" class="optionPc hidden" src="" > 
         </section>
     </main>
 
