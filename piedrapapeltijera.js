@@ -4,13 +4,15 @@
     Scissors = 3            */
 
 // Rango de valores para la pc (1, 2, 3) (piedra, papel, tijera)
-var numRandom;
-var min = 1;
-var max = 3; 
+
+const min = 1;
+const max = 3; 
 
 // contadores para el puntaje
-    var contPlayer;
-    var contPc;
+let contPlayer=0;
+let contPc=0;
+
+console.log(contPlayer, contPc);  // valores iniciales y de ciclo
 
     
 // Funcion para traer la opcion seleccionada por el jugador desde html
@@ -73,50 +75,69 @@ function choicePc(numRandom){
 function piedraPapelTijera(opcPlayer, numRandom) {
 
     var textResul = document.getElementById('textResult');
-    var scorePlayer = document.getElementById('scorePlayer');
-    var scorePc = document.getElementById('scorePc');
+
+    var scorePlayer = document.getElementById('scorePlayer').value;
+    var scorePc = document.getElementById('scorePc').value;
     
-    if (opcPlayer === numRandom) {
+         
+        if (opcPlayer === numRandom) {
 
-        textResul.textContent='tied';
-        textResul.style.color='#06ffa1';
-    }
+            textResul.textContent='tied';
+            textResul.style.color='#06ffa1';            
+            
+        }
 
-    else if(opcPlayer==1 && numRandom==2) {
+        else if(opcPlayer==1 && numRandom==2) {
 
-        textResul.textContent='paper covers rock';
-        textResul.style.color='#f64646';
-    }
+            textResul.textContent='paper covers rock';
+            textResul.style.color='#f64646';
+            contPc+=1;
+            document.getElementById('scorePc').value=contPc;
+                                        
+        }
 
-    else if(opcPlayer==1 && numRandom==3) {
+        else if(opcPlayer==1 && numRandom==3) {
 
-        textResul.textContent='rock crushes scissors';
-        textResul.style.color='#f64646';
-        contPlayer = + 1; 
-        
-    }
-    else if(opcPlayer==2 && numRandom==1) {
+            textResul.textContent='rock crushes scissors';
+            textResul.style.color='#f64646';
+            contPlayer+=1;
+             
+                       
+        }
 
-        textResul.textContent='paper covers rock';
-        textResul.style.color='#f64646';        
-        
-    }
-    else if(opcPlayer==2 && numRandom==3) {
+        else if(opcPlayer==2 && numRandom==1) {
 
-        textResul.textContent='scissors cuts paper';
-        textResul.style.color='#f64646';        
-        
-    }
-    else if(opcPlayer==3 && numRandom==1) {
+            textResul.textContent='paper covers rock';
+            textResul.style.color='#f64646';
+            contPlayer+=1;                    
+             
+            
+        }
+        else if(opcPlayer==2 && numRandom==3) {
 
-        textResul.textContent='rock crushes scissors';
-        textResul.style.color='#f64646';    
-    }
-    else if(opcPlayer==3 && numRandom==2) {
+            textResul.textContent='scissors cuts paper';
+            textResul.style.color='#f64646';
+            contPc+=1;
+             
+                    
+            
+        }
+        else if(opcPlayer==3 && numRandom==1) {
 
-        textResul.textContent='scissors cuts paper';
-        textResul.style.color='#f64646';        
-    } 
+            textResul.textContent='rock crushes scissors';
+            textResul.style.color='#f64646';
+            contPc+=1;
+             
+            
+        }
+        else if(opcPlayer==3 && numRandom==2) {
+
+            textResul.textContent='scissors cuts paper';
+            textResul.style.color='#f64646';
+            contPlayer+=1;
+                   
+                         
+        }
 
 
 }
@@ -125,36 +146,59 @@ function piedraPapelTijera(opcPlayer, numRandom) {
 
 function startBattle(){
 
-    var selectionPlayer = document.getElementById('selectionPlayer');
+    var playerWin = document.getElementById('playerWin');
+    var pcWin = document.getElementById('pcWin');
 
-    if ( selectionPlayer.classList.contains(true)){
+    if (contPlayer==10) {
 
-        var numRandom = Math.floor(Math.random()*(max - min + 1)) + min;      
-        choicePc(numRandom);
+        playerWin.textContent='YOU WIN';
+        playerWin.style.color='#00FF00';
+        alert("El Juego ha terminado, tu ganas");
+        resetBattle();
+    }
 
-        var x = selectionPlayer.classList.item(0);
+    else if (contPc==10){        
+        pcWin.textContent='Javascript Win';
+        pcWin.style.color='#00FF00';
+        playerWin.textContent='You Lose';
+        playerWin.style.color='#FF0000';
+        alert("El Juego ha terminado, la pc gana");
+        resetBattle();
+
+    }    
+
+    else { 
+
+        var selectionPlayer = document.getElementById('selectionPlayer');
+
+        if ( selectionPlayer.classList.contains(true)){
+
+            var numRandom = Math.floor(Math.random()*(max - min + 1)) + min;      
+            choicePc(numRandom);
+
+            var x = selectionPlayer.classList.item(0);                
             
-        console.log(x);
 
-        if ( x == "piedra") {
-            var opcPlayer = 1;
-            piedraPapelTijera(opcPlayer, numRandom);
-        }
+            if ( x == "piedra") {
+                var opcPlayer = 1;
+                piedraPapelTijera(opcPlayer, numRandom);
+            }
 
-        else if (x == "papel") {
-            var opcPlayer = 2;            
-            piedraPapelTijera(opcPlayer, numRandom);
-        }
+            else if (x == "papel") {
+                var opcPlayer = 2;            
+                piedraPapelTijera(opcPlayer, numRandom);
+            }
+            
+            else {
+                var opcPlayer = 3;            
+                piedraPapelTijera(opcPlayer, numRandom);
+            }                      
+
+        } 
         
         else {
-            var opcPlayer = 3;            
-            piedraPapelTijera(opcPlayer, numRandom);
-        }                      
-
-    } 
-    
-    else {
-        alert("Debe seleccionar una opcion de ataque");
+            alert("Debe seleccionar una opcion de ataque");
+        }
     }
 
 }
