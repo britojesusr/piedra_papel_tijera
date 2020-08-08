@@ -68,7 +68,7 @@ function choicePc(numRandom){
 }
 
 
-//  Funcion  piedra papel o tijera batalla entre jugador y pc  
+//  Branch Funcionalidad implementar un ciclo para llevar score y mostrar el ganador 
 
 function piedraPapelTijera(opcPlayer, numRandom) {
 
