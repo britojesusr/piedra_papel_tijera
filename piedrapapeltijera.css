@@ -13,10 +13,13 @@
 }
 
 body{
+    max-height: 100%;
+    
     font-family: 'Concert One', cursive;
     background-image: url("https://i.ibb.co/0Dxrsdt/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    box-sizing: ;
     
 }
 
@@ -118,9 +121,11 @@ main{
 
 .hidden{
     display: none;
+    width: 100px;
+    height: 130px;
 }
-.show {
-    display: flex;
+.true {
+    display: block;
     width: 100px;
     height: 130px;
 }
@@ -182,9 +187,10 @@ main{
     
 }
 
-.footer {
+/*.footer {
     background-color: #4e3224;
     width: 100%;
-    height: 50px;
-    padding-top: 40px;
-}
+    height: 30px;
+    bottom: 0;
+    
+}*/
