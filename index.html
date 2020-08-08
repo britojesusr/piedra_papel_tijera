@@ -30,16 +30,18 @@
         </section>
         <section class="seleccionJugador">
             <h2 class="choice">Your choice</h2>
-            <img id="seleccionJugador" class="opcionJugador hidden" src="" alt="choice" draggable="false" >
+            <img id="seleccionJugador" class="hidden" src="" alt="choice" draggable="false" >
 
         </section>
         <section class="battle">
-            <h2 class="battleSpan">Battle</h2>
-            <span>
-                <span class="icon-narrow1"></span>
-            </span>
-            <button id="battleButton" value="battleButton" onclick="startBattle();">Battle</button>
+            <h3 class="battleSpan">Battle</h3>
+            <h3 id="textResult" class="battleSpan"></h3>            
             
+            <div class="buttons">            
+                <button id="battleButton" class="button" value="battleButton" onclick="startBattle();">Battle</button>
+                <button id="resetButton"  class="button" value="resetButton" onclick="resetBattle();">Reset</button>
+            </div>
+
         </section>
         <section class="seleccionPc">
             <h2 class="choice">Choice of PC</h2>
