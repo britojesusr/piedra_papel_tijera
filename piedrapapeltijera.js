@@ -7,35 +7,30 @@
 
 const min = 1;
 const max = 3; 
-
 // contadores para el puntaje
-let contPlayer=0;
-let contPc=0;
-
-console.log(contPlayer, contPc);  // valores iniciales y de ciclo
 
     
 // Funcion para traer la opcion seleccionada por el jugador desde html
 
 function choicePlayer(selection){    
    
-    var selectionPlayer = document.getElementById('selectionPlayer');     
+    const selectionPlayer = document.getElementById('selectionPlayer');     
 
     if(selection===1) {
         selectionPlayer.setAttribute("src", "https://i.ibb.co/p2FKT1B/piedra.png");
         selectionPlayer.removeAttribute("class", "hidden");
-        selectionPlayer.setAttribute("class", "piedra optionPlayer true");             
+        selectionPlayer.classList.add("piedra", "optionPlayer", "true");             
     }
 
     else if (selection===2) {
         selectionPlayer.setAttribute("src", "https://i.ibb.co/2ggW1FD/papel.png");
         selectionPlayer.removeAttribute("class", "hidden");
-        selectionPlayer.setAttribute("class", "papel optionPlayer true");        
+        selectionPlayer.classList.add("papel", "optionPlayer", "true");        
     }
     else if (selection===3) {
         selectionPlayer.setAttribute("src", "https://i.ibb.co/qMkqkJn/tijera.png");
         selectionPlayer.removeAttribute("class", "hidden");
-        selectionPlayer.setAttribute("class", "tijera optionPlayer true");        
+        selectionPlayer.classList.add("tijera", "optionPlayer", "true");       
     }    
 
     else {
@@ -47,22 +42,22 @@ function choicePlayer(selection){
 // Funcion que toma la opcion de la PC y la coloca en modo batalla
 
 function choicePc(numRandom){
-    var selectionPc = document.getElementById('selectionPc');
+    const selectionPc = document.getElementById('selectionPc');
 
     if (numRandom==1) {
         selectionPc.setAttribute("src", "https://i.ibb.co/p2FKT1B/piedra.png");
         selectionPc.removeAttribute("class", "hidden");
-        selectionPc.setAttribute("class", "true");
+        selectionPc.classList.add("true");
     }
     else if (numRandom==2) {
         selectionPc.setAttribute("src", "https://i.ibb.co/2ggW1FD/papel.png");
         selectionPc.removeAttribute("class", "hidden");
-        selectionPc.setAttribute("class", "true");
+        selectionPc.classList.add("true");
     }
     else if (numRandom==3) {
         selectionPc.setAttribute("src", "https://i.ibb.co/qMkqkJn/tijera.png");
         selectionPc.removeAttribute("class", "hidden");
-        selectionPc.setAttribute("class", "true");
+        selectionPc.classList.add("true");
     }
     else {
         alert("Se ha producido un error, recargue el juego");
@@ -74,16 +69,21 @@ function choicePc(numRandom){
 
 function piedraPapelTijera(opcPlayer, numRandom) {
 
-    var textResul = document.getElementById('textResult');
 
-    var scorePlayer = document.getElementById('scorePlayer').value;
-    var scorePc = document.getElementById('scorePc').value;
+    const textResul = document.getElementById('textResult');
+    const scorePlayer = document.getElementById('scorePlayer');
+    const scorePc = document.getElementById('scorePc');
+
+    let contPlayer = parseInt(scorePlayer.value); 
+    let contPc = parseInt(scorePc.value);
     
+    console.log("Ahora parece que si " +contPlayer + contPc);
          
         if (opcPlayer === numRandom) {
 
             textResul.textContent='tied';
-            textResul.style.color='#06ffa1';            
+            textResul.style.color='#06ffa1';
+            console.log(contPlayer, contPc);           
             
         }
 
@@ -93,6 +93,7 @@ function piedraPapelTijera(opcPlayer, numRandom) {
             textResul.style.color='#f64646';
             contPc+=1;
             document.getElementById('scorePc').value=contPc;
+            console.log(contPlayer, contPc); 
                                         
         }
 
@@ -101,16 +102,18 @@ function piedraPapelTijera(opcPlayer, numRandom) {
             textResul.textContent='rock crushes scissors';
             textResul.style.color='#f64646';
             contPlayer+=1;
-             
-                       
+            document.getElementById('scorePlayer').value=contPlayer;
+            console.log(contPlayer, contPc);
+                          
         }
 
         else if(opcPlayer==2 && numRandom==1) {
 
             textResul.textContent='paper covers rock';
             textResul.style.color='#f64646';
-            contPlayer+=1;                    
-             
+            contPlayer+=1;
+            document.getElementById('scorePlayer').value=contPlayer;
+            console.log(contPlayer, contPc);                     
             
         }
         else if(opcPlayer==2 && numRandom==3) {
@@ -118,16 +121,17 @@ function piedraPapelTijera(opcPlayer, numRandom) {
             textResul.textContent='scissors cuts paper';
             textResul.style.color='#f64646';
             contPc+=1;
-             
-                    
-            
+            document.getElementById('scorePc').value=contPc;
+            console.log(contPlayer, contPc);             
+                     
         }
         else if(opcPlayer==3 && numRandom==1) {
 
             textResul.textContent='rock crushes scissors';
             textResul.style.color='#f64646';
             contPc+=1;
-             
+            document.getElementById('scorePc').value=contPc;
+            console.log(contPlayer, contPc);              
             
         }
         else if(opcPlayer==3 && numRandom==2) {
@@ -135,62 +139,69 @@ function piedraPapelTijera(opcPlayer, numRandom) {
             textResul.textContent='scissors cuts paper';
             textResul.style.color='#f64646';
             contPlayer+=1;
-                   
+            document.getElementById('scorePlayer').value=contPlayer;
+            console.log(contPlayer, contPc);                    
                          
-        }
-
-
+        }    
+   
 }
 
 //Funcion iniciar batalla - Se activa con el Boton battle del HTML y llama a piedraPapelTijera();
 
 function startBattle(){
 
-    var playerWin = document.getElementById('playerWin');
-    var pcWin = document.getElementById('pcWin');
+    const playerWin = document.getElementById('playerWin');
+    const pcWin = document.getElementById('pcWin');
 
-    if (contPlayer==10) {
+    const contPlayer = document.getElementById('scorePlayer');
+    const contPlayerValue = contPlayer.value;
 
+    const contPc = document.getElementById('scorePc');
+    const contPcValue = contPc.value;
+
+    console.log(contPlayerValue, contPcValue);
+
+    if (contPlayerValue==10) {
         playerWin.textContent='YOU WIN';
         playerWin.style.color='#00FF00';
-        alert("El Juego ha terminado, tu ganas");
-        resetBattle();
+        alert("YOU WIN");
+        resetAllBattle();
     }
 
-    else if (contPc==10){        
+    else if (contPcValue==10){        
         pcWin.textContent='Javascript Win';
         pcWin.style.color='#00FF00';
         playerWin.textContent='You Lose';
         playerWin.style.color='#FF0000';
-        alert("El Juego ha terminado, la pc gana");
-        resetBattle();
-
+        alert("PC WIN");
+        resetAllBattle();
     }    
 
     else { 
 
-        var selectionPlayer = document.getElementById('selectionPlayer');
+        const selectionPlayer = document.getElementById('selectionPlayer');
+        const selectionPlayerValue =selectionPlayer.classList;
 
-        if ( selectionPlayer.classList.contains(true)){
+        if ( selectionPlayerValue.contains(true)){          
 
-            var numRandom = Math.floor(Math.random()*(max - min + 1)) + min;      
+            let numRandom = Math.floor(Math.random()*(max - min + 1)) + min;      
             choicePc(numRandom);
 
-            var x = selectionPlayer.classList.item(0);                
+            let x = selectionPlayer.classList.item(0);                
             
 
             if ( x == "piedra") {
-                var opcPlayer = 1;
+                let opcPlayer = 1;
                 piedraPapelTijera(opcPlayer, numRandom);
             }
 
             else if (x == "papel") {
-                var opcPlayer = 2;            
+                let opcPlayer = 2;            
                 piedraPapelTijera(opcPlayer, numRandom);
             }
             
             else {
-                var opcPlayer = 3;            
+                let opcPlayer = 3;            
                 piedraPapelTijera(opcPlayer, numRandom);
             }                      
 
@@ -203,22 +214,47 @@ function startBattle(){
 
 }
 
+function continueBattle() {
+       
+    const selectionPlayer = document.getElementById('selectionPlayer');
+    const selectionPc = document.getElementById('selectionPc');
+    const textResul = document.getElementById('textResult');
 
-function resetBattle(){
-    var selectionPlayer = document.getElementById('selectionPlayer');
-    var selectionPc = document.getElementById('selectionPc');
-    var textResul = document.getElementById('textResult');
+    const selectionPcValue=selectionPc.classList;
+
+    if (selectionPcValue.contains(true)) {  
+
+    selectionPlayer.removeAttribute("src");
+    selectionPlayer.setAttribute("class", "hidden");
+    selectionPc.removeAttribute("src");
+    selectionPc.setAttribute("class", "hidden"); 
+    textResul.textContent='';
+
+    }
+
+    else {
+        alert("First Start Battle");
+    }    
+}
+
+
+
+function resetAllBattle(){
+    const selectionPlayer = document.getElementById('selectionPlayer');
+    const selectionPc = document.getElementById('selectionPc');
+    const textResul = document.getElementById('textResult');
+    const contPlayer = document.getElementById('scorePlayer');
+    const contPc = document.getElementById('scorePc');  
     
     selectionPlayer.removeAttribute("src");
     selectionPlayer.setAttribute("class", "hidden");
     selectionPc.removeAttribute("src");
     selectionPc.setAttribute("class", "hidden");
-    textResul.textContent='';
+    contPlayer.value=0;
+    contPc.value=0;
+    textResul.textContent='';   
     
 }
-
-
-
 
 
 
