@@ -11,7 +11,8 @@
 </head>
 <body>
     <header>
-        <h1>Rock Paper Scissors</h1>
+        <h1>Rock Paper Scissors </h1>
+
     </header>
 
     <main class="main">
@@ -34,7 +35,7 @@
         </section>
 
 
-        <section class="options">
+        <section id="options" class="options">
             <img id="piedra" class="optionPlayer" src="https://i.ibb.co/p2FKT1B/piedra.png" draggable="false" onclick="choicePlayer(1);">
             <img id="papel" class="optionPlayer" src="https://i.ibb.co/2ggW1FD/papel.png" draggable="false" onclick="choicePlayer(2);">
             <img id="tijera" class="optionPlayer" src="https://i.ibb.co/qMkqkJn/tijera.png" draggable="false" onclick="choicePlayer(3);">
@@ -48,11 +49,9 @@
             <h3 class="battleSpan">Battle</h3>
             <h3 id="textResult" class="battleSpan"></h3>            
             
-            <div class="buttons">            
-                
-                <a id="battleButton" href="#" class="button start" onclick="startBattle()">Star Battle</a>
-                <a id="continueButton" href="#" class="button continue" onclick="continueBattle()">Continue</a>
-                <a id="resetButton"    href="#" class="button reset" onclick="resetAllBattle()">Reset</a>
+            <div class="buttons"> 
+                <a id="nextButton" href="#" class="button next false" onclick="nextRound()">Next Round</a>
+                <a id="resetButton" href="#" class="button reset" onclick="resetAllBattle()">Reset</a>
             </div>
 
         </section>
