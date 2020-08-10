@@ -205,6 +205,9 @@ function resetAllBattle(){
     const playerWin = document.getElementById('playerWin');
     const pcWin = document.getElementById('pcWin');
 
+    document.getElementById('nextButton').style.pointerEvents="initial";
+    document.getElementById('options').style.pointerEvents="initial";
+
     playerWin.textContent='';
     pcWin.textContent='';
     selectionPlayer.removeAttribute("src");
