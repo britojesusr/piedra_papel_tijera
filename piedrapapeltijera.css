@@ -16,6 +16,12 @@ body{
     
 }
 
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+
+}
+
 header{
     background-color: #4e3224;
     display: flex;
@@ -38,7 +44,7 @@ main{
     background-color: #e7d8c3;
     border-radius: 10px;
     max-width: 900px;
-    min-width: min-content;    
+    min-width: 800px;    
     margin: 0 auto;
     margin-top: 20px;
     padding: 10px;

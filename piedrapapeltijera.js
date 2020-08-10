@@ -80,7 +80,7 @@ function piedraPapelTijera(opcPlayer, numRandom) {
         if (opcPlayer === numRandom) {
 
             textResul.textContent='tied';
-            textResul.style.color='#06ffa1';
+            textResul.style.color='#4fa8f0';
             winner();             
         }
 
@@ -96,7 +96,7 @@ function piedraPapelTijera(opcPlayer, numRandom) {
         else if(opcPlayer==1 && numRandom==3) {
 
             textResul.textContent='rock crushes scissors';
-            textResul.style.color='#f64646';
+            textResul.style.color='#06ffa1';
             contPlayer+=1;
             document.getElementById('scorePlayer').value=contPlayer;
             winner();                          
@@ -105,7 +105,7 @@ function piedraPapelTijera(opcPlayer, numRandom) {
         else if(opcPlayer==2 && numRandom==1) {
 
             textResul.textContent='paper covers rock';
-            textResul.style.color='#f64646';
+            textResul.style.color='#06ffa1';
             contPlayer+=1;
             document.getElementById('scorePlayer').value=contPlayer;
             winner();              
@@ -132,7 +132,7 @@ function piedraPapelTijera(opcPlayer, numRandom) {
         else if(opcPlayer==3 && numRandom==2) {
 
             textResul.textContent='scissors cuts paper';
-            textResul.style.color='#f64646';
+            textResul.style.color='#06ffa1';
             contPlayer+=1;
             document.getElementById('scorePlayer').value=contPlayer;
             winner();                                
