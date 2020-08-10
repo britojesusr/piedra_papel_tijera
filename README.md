@@ -55,8 +55,6 @@ aplicando las reglas ya conocidas del juego, el ganador de esa ronda sumara un p
 el ganador definitivo del juego será el que haya reunido en su contador 10 puntos en total .. 
 
 
-
-
 Certificado de aprobación:
 
 <img src="https://i.ibb.co/B4NxPZB/Captura-de-pantalla-2020-08-07-00-40-27.png" alt="Captura-de-pantalla-2020-08-07-00-40-27" border="0">
