@@ -1,6 +1,6 @@
 # piedra_papel_tijera
 
-Rock Paper Scissors ( Piedra papel o tijera ) es el resultado de un reto tomado en el curso Basico de Javascript en Platzi ( https://platzi.com/cursos/basico-javascript/ ) inspirado en el tradicional juego de manos en el que existen tres elementos: la piedra que vence a la tijera rompiéndola, la tijera que vence al papel cortándolo y el papel que vence a la piedra envolviéndola, dando lugar a un círculo o ciclo cerrado, que caracteriza al juego. Se utiliza con mucha frecuencia para decidir quién de dos personas hará algo, tal y como se hace a veces usando una moneda, o para dirimir algún asunto (véase volado).
+Rock Paper Scissors ( Piedra papel o tijera ) es el resultado de un reto tomado en el curso Basico de Javascript en Platzi ( https://platzi.com/cursos/basico-javascript/ ) inspirado en el tradicional juego de manos en el que existen tres elementos: la piedra que vence a la tijera rompiéndola, la tijera que vence al papel cortándolo y el papel que vence a la piedra envolviéndola, dando lugar a un círculo o ciclo cerrado, que caracteriza al juego. Se utiliza con mucha frecuencia para decidir quién de dos personas hará algo, tal y como se hace a veces usando una moneda, o para dirimir algún asunto.
 
 En esta implementación utilicé un diseño visual muy simple bajo HTML y CSS
 dandole prioridad a la logica que fue desarrollada en Javascript que es el
