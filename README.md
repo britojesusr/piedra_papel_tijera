@@ -36,7 +36,7 @@ El objetivo es vencer al oponente seleccionando el arma que gana, según las sig
 - A veces, esto se repite hasta que uno de los jugadores gana con tres puntos, o cinco, 
 según se haya acordado previamente, y será entonces el vencedor del juego.
 
-Lógica implementada con Javascript en el Juego
+Lógica implementada con Javascript en el Juego: 
 
 * El jugador selecciona una opcion entre ( piedra )  (  papel  )   ( tijera ) 
 * En ese momento su seleccion se almacena en una variable y es transformada en un numero entero entre 1 y 3
@@ -44,7 +44,7 @@ Lógica implementada con Javascript en el Juego
 * Al mismo tiemppo es invocada una funcion matematica que escoje un numero aleatorio entre 1 y 3
   la cual será la opción que el codigo de javascript haya escogido.
 
-let numRandom = Math.floor(Math.random()*(max - min + 1)) + min; 
+  let numRandom = Math.floor(Math.random()*(max - min + 1)) + min;  ( Funcion que genera numero aleatorio )
 
 Este numero se almacena una variable y es comparado con el valor guardado de la seleccion del usuario
 
