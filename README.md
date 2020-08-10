@@ -28,23 +28,21 @@ Sobre el Juego:
 
 El objetivo es vencer al oponente seleccionando el arma que gana, según las siguientes reglas:
 
-La piedra aplasta la tijera. (Gana la piedra.)
-La tijera corta el papel. (Gana la tijera.)
-El papel envuelve la piedra. (Gana el papel.)
-En caso de empate (que dos jugadores elijan el mismo elemento) se juega otra vez.
-A veces, esto se repite hasta que uno de los jugadores gana con tres puntos, o cinco, 
+- La piedra aplasta la tijera. (Gana la piedra.)
+- La tijera corta el papel. (Gana la tijera.)
+- El papel envuelve la piedra. (Gana el papel.)
+- En caso de empate (que dos jugadores elijan el mismo elemento) se juega otra vez.
+
+- A veces, esto se repite hasta que uno de los jugadores gana con tres puntos, o cinco, 
 según se haya acordado previamente, y será entonces el vencedor del juego.
 
 Lógica implementada con Javascript en el Juego
 
-El jugador selecciona una opcion entre 
-( piedra )  (  papel  )   ( tijera ) 
-
-En ese momento su seleccion se almacena en una variable y es transformada en un numero entero entre 1 y 3
-piedra = 1 ; papel = 2;  tijera = 3; 
-
-Al mismo tiemppo es invocada una funcion matematica que escoje un numero aleatorio entre 1 y 3 
-la cual será la opción que el codigo de javascript haya escogido
+* El jugador selecciona una opcion entre ( piedra )  (  papel  )   ( tijera ) 
+* En ese momento su seleccion se almacena en una variable y es transformada en un numero entero entre 1 y 3
+  piedra = 1 ; papel = 2;  tijera = 3; 
+* Al mismo tiemppo es invocada una funcion matematica que escoje un numero aleatorio entre 1 y 3
+  la cual será la opción que el codigo de javascript haya escogido.
 
 let numRandom = Math.floor(Math.random()*(max - min + 1)) + min; 
 
